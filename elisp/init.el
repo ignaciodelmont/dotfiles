@@ -1,6 +1,8 @@
 ;; Package management
 (require 'package)
 
+(package-initialize)
+
 (setq package-archives
       '(("melpa" . "http://melpa.org/packages/")
 	("org" . "http://orgmode.org/elpa/")
@@ -8,7 +10,8 @@
 
 (print package-archives)
 
-(package-initialize)
+
+
 (unless package-archive-contents
   (package-refresh-contents))
 
@@ -44,8 +47,6 @@
       `((".*" ,temporary-file-directory t))) ; don't clutter up the filesystem with autosave files
 
 
-(setq custom-file "~/elisp/emacs-custom.el")
-(load custom-file)
 (use-package exec-path-from-shell
   :ensure t
   :if (memq window-system '(mac ns x))
@@ -68,15 +69,15 @@
 
 ;; lsp
 (setq lsp-diagnostic-package :none) ; disables lsp as default checker for flycheck (alongside other stuff)
-(use-package lsp-ui :commands lsp-ui-mode)
+;; (use-package lsp-ui)
 
 
 ;; Which Key
 (use-package which-key
   :init
-  (which-key-mode)
+  (setq which-key-idle-delay 0.3)
   :config
-  (setq which-key-idle-delay 0.3))
+  (which-key-mode))
 
 
 ;; Company
@@ -94,7 +95,7 @@
 
 ; ref:  https://github.com/zerolfx/copilot.el
 ; in order to enable it run M-x copilot-login
-    
+
 (use-package copilot
   :quelpa (copilot :fetcher github
                    :repo "zerolfx/copilot.el"
@@ -106,31 +107,15 @@
   (delq 'company-preview-if-just-one-frontend company-frontends))
   (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
   (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
- )
-
-
-;; Tree-sitter
-(use-package tree-sitter
-  :ensure t
-  :hook (prog-mode . tree-sitter-mode))
+  )
 
 (use-package tree-sitter-langs
   :ensure t)
 
-;; (use-package treesit-auto
-;;   :config
-;;   (global-treesit-auto-mode))
-
-(setq treesit-language-source-alist
-	     '((templ "https://github.com/vrischmann/tree-sitter-templ")))
-
-
-;; Shell
-(use-package vterm
+(use-package treesit-auto
   :ensure t
   :config
-  (setq vterm-shell "/bin/zsh")
-  (setq vterm-max-scrollback 10000))
+  (global-treesit-auto-mode))
 
 
 ;; Magit
@@ -151,7 +136,7 @@
   :ensure t
   :bind (:map projectile-mode-map
 	      ("s-p" . projectile-command-map))
-  :init
+  :config
   (projectile-mode +1))
 
 
@@ -177,7 +162,7 @@
 (load "~/elisp/python-configs")
 (load "~/elisp/clojure-configs")
 (load "~/elisp/ts-js-configs")
-(load "~/elisp/go-configs")
+;; (load "~/elisp/go-configs")
 
 ;; Org
 (load "~/elisp/org-configs")
@@ -190,10 +175,8 @@
 
 (global-set-key [f8] 'neotree-toggle)
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-;; Markdown
-(use-package markdown-mode
-  :mode "\\.md\\'"
-  )
 
-(use-package markdown-preview-mode
-  :ensure t)
+
+;; Custom file
+(setq custom-file "~/elisp/emacs-custom.el")
+(load custom-file)

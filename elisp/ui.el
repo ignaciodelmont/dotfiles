@@ -3,7 +3,6 @@
 (use-package doom-themes)
 (use-package doom-modeline
   :init (doom-modeline-mode 1))
-(use-package solarized-theme)
 
 ;; UI
 (scroll-bar-mode -1)  ; Disable visible scrollbar

@@ -15,7 +15,7 @@
 				 ("DONE" . "green")
 				 ("TODO" . "red")
 				 ("MR" . "purple"))
-	org-agenda-files '("~/org-roam/Work" "~/org-roam/Personal")
+	org-agenda-files '("~/org-roam/Work" "~/org-roam/Personal" "~/org-roam")
 	org-agenda-start-with-log-mode t
 	org-log-done 'time
 	org-log-into-drawer t
