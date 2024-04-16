@@ -46,3 +46,32 @@
   (org-roam-setup)
   (org-roam-db-autosync-mode)
   )
+
+(setq org-directory "~/org-roam")
+
+;; org-ql
+(use-package org-ql
+  :quelpa (org-ql :fetcher github :repo "alphapapa/org-ql"))
+
+
+
+;; https://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.html
+(setq org-agenda-custom-commands
+      '(
+	("kt" "Kognitos ITEMS"
+         ((org-ql-block '(and (todo "TODO")
+                              (tags "KOG"))
+                        ((org-ql-block-header "Kognitos TODOS")))
+
+	  (org-ql-block '(and (todo "WIP")
+			      (tags "KOG"))
+			((org-ql-block-header "Kognitos WIPs")))
+
+	  (org-ql-block '(and (todo "ASK")
+			      (tags "KOG"))
+			((org-ql-block-header "Kognitos ASKs")))
+	  ;; (agenda) ;; if uncommented it includes the agenda
+	  ))
+	
+	;; ... other commands here
+	))
