@@ -71,6 +71,11 @@
 (setq lsp-diagnostic-package :none) ; disables lsp as default checker for flycheck (alongside other stuff)
 (use-package lsp-ui)
 
+;; dap-mode
+(use-package dap-mode
+  :ensure t)
+
+
 
 ;; Which Key
 (use-package which-key

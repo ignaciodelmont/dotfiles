@@ -67,6 +67,11 @@
 			      (tags "KOG"))
 			((org-ql-block-header "Kognitos WIPs")))
 
+	  (org-ql-block '(and (todo "MR")
+			      (tags "KOG"))
+			((org-ql-block-header "Kognitos MRs")))
+
+	  
 	  (org-ql-block '(and (todo "ASK")
 			      (tags "KOG"))
 			((org-ql-block-header "Kognitos ASKs")))
