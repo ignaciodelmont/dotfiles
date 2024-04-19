@@ -77,6 +77,11 @@
 			((org-ql-block-header "Kognitos ASKs")))
 	  ;; (agenda) ;; if uncommented it includes the agenda
 	  ))
-	
+	("p" "Personal"
+	 ((org-ql-block '(tags "personal")
+			((org-ql-block-header "Personal")))
+	  
+	  )
+	 )
 	;; ... other commands here
 	))
