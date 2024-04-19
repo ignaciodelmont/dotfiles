@@ -92,27 +92,9 @@
   (setq company-idle-delay 0)
   (setq company-minimum-prefix-length 1))
 
-;; With use-package:
 (use-package company-box
   :hook (company-mode . company-box-mode))
 
-;; Copilot
-
-; ref:  https://github.com/zerolfx/copilot.el
-; in order to enable it run M-x copilot-login
-
-(use-package copilot
-  :quelpa (copilot :fetcher github
-                   :repo "zerolfx/copilot.el"
-                   :branch "main"
-                   :files ("dist" "*.el"))
-  :hook (prog-mode . copilot-mode)
-  :config (with-eval-after-load 'company
-  ;; disable inline previews
-  (delq 'company-preview-if-just-one-frontend company-frontends))
-  (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
-  (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
-  )
 
 (use-package tree-sitter-langs
   :ensure t)
@@ -189,3 +171,24 @@
 ;; Custom file
 (setq custom-file "~/elisp/emacs-custom.el")
 (load custom-file)
+
+
+
+;; Install manually after emacs is already set up. Installation can be quirky
+
+;; Copilot
+
+; ref:  https://github.com/zerolfx/copilot.el
+; in order to enable it run M-x copilot-login
+
+;; (use-package copilot
+;;   :quelpa (copilot :fetcher github
+;;                    :repo "zerolfx/copilot.el"
+;;                    :branch "main"
+;;                    :files ("*.el"))
+;;   :hook (prog-mode . copilot-mode)
+;;   :config (with-eval-after-load 'company
+;;   ;; disable inline previews
+;;   (delq 'company-preview-if-just-one-frontend company-frontends))
+;;   (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+;;   (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion))
