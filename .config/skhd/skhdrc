@@ -73,7 +73,7 @@ ctrl + cmd - r : yabai --restart-service
 
 
 # Toggle sketchybar
-ctrl + shift - h : bash ~/scripts/sketchybar_toggle.sh
+ctrl + shift - j : bash ~/scripts/sketchybar_toggle.sh
 
 # Apps
 cmd - return : /Applications/kitty.app/Contents/MacOS/kitty -d ~
