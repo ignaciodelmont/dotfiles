@@ -132,7 +132,6 @@
   :config
   (helm-projectile-on)
   (global-set-key (kbd "M-x") 'helm-M-x)
-  (global-set-key (kbd "C-x C-f") 'helm-find-files)
   (setq completion-styles '(flex)))
 
 

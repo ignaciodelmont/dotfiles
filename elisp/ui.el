@@ -13,3 +13,10 @@
 (add-to-list 'default-frame-alist '(undecorated . t))
 (global-hl-line-mode 1)
 
+;; Font (M-x describe-font to get the full list of fonts)
+(defun font-exists-p (font) (if (null (x-list-fonts font)) nil t))
+(when (window-system)
+  (cond
+   ((font-exists-p "M PLUS 1 Code") (set-frame-font "M PLUS 1 Code:pixelsize=12:weight=normal:slant=normal:width=normal:spacing=100:scalable=true:size=16" nil t))
+   ((font-exists-p "Courier New") (set-frame-font "Courier New:size=16" nil t)))
+  )

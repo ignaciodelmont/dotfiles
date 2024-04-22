@@ -78,10 +78,11 @@
 	  ;; (agenda) ;; if uncommented it includes the agenda
 	  ))
 	("p" "Personal"
-	 ((org-ql-block '(tags "personal")
+	 ((org-ql-block '(and (tags "personal") (todo))
 			((org-ql-block-header "Personal")))
 	  
 	  )
 	 )
 	;; ... other commands here
 	))
+
