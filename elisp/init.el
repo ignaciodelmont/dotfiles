@@ -42,6 +42,8 @@
 (load "~/elisp/ui")
 
 ;; Default Behavior
+(defun ignore-bell)
+(setq ring-bell-function 'ignore-bell)
 (setq make-backup-files nil) ; don't store backup files anywhere
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t))) ; don't clutter up the filesystem with autosave files
