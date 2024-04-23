@@ -172,6 +172,8 @@
 (load custom-file)
 
 
+;; When using native comp, don't spam with warnings
+(setq native-comp-async-report-warnings-errors nil)
 
 ;; Install manually after emacs is already set up. Installation can be quirky
 
