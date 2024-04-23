@@ -8,13 +8,13 @@
   :ensure t
   :hook (org-mode . org-mode-visual-setup)
   :config
-  (setq org-todo-keywords '((sequence "TODO(t)" "WIP(w)" "BLOCKED(b)" "ASK(a)" "MR(m)" "|" "DONE(d)"))
+  (setq org-todo-keywords '((sequence "TODO(t)" "WIP(w)" "BLOCKED(b)" "ASK(a)" "PR(m)" "|" "DONE(d)"))
 	org-todo-keyword-faces '(("WIP" . "yellow")
 				 ("BLOCKED" . "orange")
 				 ("ASK" . "blue")
 				 ("DONE" . "green")
 				 ("TODO" . "red")
-				 ("MR" . "purple"))
+				 ("PR" . "purple"))
 	org-agenda-files '("~/org-roam/Work" "~/org-roam/Personal" "~/org-roam")
 	org-agenda-start-with-log-mode t
 	org-log-done 'time
@@ -67,9 +67,9 @@
 			      (tags "KOG"))
 			((org-ql-block-header "Kognitos WIPs")))
 
-	  (org-ql-block '(and (todo "MR")
+	  (org-ql-block '(and (todo "PR")
 			      (tags "KOG"))
-			((org-ql-block-header "Kognitos MRs")))
+			((org-ql-block-header "Kognitos PRs")))
 
 	  
 	  (org-ql-block '(and (todo "ASK")
