@@ -45,6 +45,7 @@
   :config
   (org-roam-setup)
   (org-roam-db-autosync-mode)
+  (setq org-return-follows-link t)
   )
 
 (setq org-directory "~/org-roam")

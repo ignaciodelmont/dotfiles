@@ -22,7 +22,7 @@
 			 (auto-virtualenv-set-virtualenv)
 			 (lsp)
 			 (flycheck-mode 1)
-			 (flycheck-select-checker 'python-flake8)
+			 (flycheck-select-checker 'python-pylint)
 			 (dap-mode 1)
 			 (dap-ui-mode 1)
 			 )))

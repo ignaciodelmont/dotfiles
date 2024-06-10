@@ -42,8 +42,7 @@
 (load "~/elisp/ui")
 
 ;; Default Behavior
-(defun ignore-bell)
-(setq ring-bell-function 'ignore-bell)
+(setq ring-bell-function 'ignore)
 (setq make-backup-files nil) ; don't store backup files anywhere
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t))) ; don't clutter up the filesystem with autosave files
@@ -54,11 +53,18 @@
   :if (memq window-system '(mac ns x))
   :config (exec-path-from-shell-initialize))
 
-(setq global-auto-revert-mode t) ; reload files when they change on disk
+(global-auto-revert-mode 1) ; reload files when they change on disk
 (setq truncate-partial-width-windows nil) ; truncate even if the window is split
 (setq-default truncate-lines t) ; truncate lines instead of wrapping them
 (setq word-wrap nil) ; don't wrap words
 
+;; Multiple cursor
+(use-package multiple-cursors
+  :ensure t)
+
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 ;; Keybindings
 (setq mac-option-key-is-meta nil
@@ -150,6 +156,10 @@
 ;; Buffers
 (load "~/elisp/buffer-configs")
 
+
+;; Windows
+(load "~/elisp/window-configs")
+
 ;; Languages
 (load "~/elisp/python-configs")
 (load "~/elisp/clojure-configs")
@@ -175,7 +185,7 @@
 
 
 ;; When using native comp, don't spam with warnings
-(setq native-comp-async-report-warnings-errors nil)
+;; (setq native-comp-async-report-warnings-errors nil)
 
 ;; Install manually after emacs is already set up. Installation can be quirky
 
@@ -184,14 +194,14 @@
 ; ref:  https://github.com/zerolfx/copilot.el
 ; in order to enable it run M-x copilot-login
 
-;; (use-package copilot
-;;   :quelpa (copilot :fetcher github
-;;                    :repo "zerolfx/copilot.el"
-;;                    :branch "main"
-;;                    :files ("*.el"))
-;;   :hook (prog-mode . copilot-mode)
-;;   :config (with-eval-after-load 'company
-;;   ;; disable inline previews
-;;   (delq 'company-preview-if-just-one-frontend company-frontends))
-;;   (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
-;;   (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion))
+(use-package copilot
+  :quelpa (copilot :fetcher github
+                   :repo "zerolfx/copilot.el"
+                   :branch "main"
+                   :files ("*.el"))
+  :hook (prog-mode . copilot-mode)
+  :config (with-eval-after-load 'company
+  ;; disable inline previews
+  (delq 'company-preview-if-just-one-frontend company-frontends))
+  (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+  (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion))
