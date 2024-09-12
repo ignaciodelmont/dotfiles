@@ -13,12 +13,13 @@ fi
 WINDOW_ID=$(yabai -m query --windows | jq -e ".[] | select(.title==\"$WINDOW_TITLE\") | .id")
 WINDOW_QUERY=$(yabai -m query --windows --window "$WINDOW_ID")
 IS_MINIMIZED=$(echo "$WINDOW_QUERY" | jq '."is-minimized"')
+IS_HIDDEN=$(echo "$WINDOW_QUERY" | jq '."is-hidden"')
 IS_FLOATING=$(echo "$WINDOW_QUERY" | jq '."is-floating"')
 CURRENT_SPACE=$(yabai -m query --spaces --space | jq '.index')
 
 
-if [[ "${IS_MINIMIZED}" == "false" ]]; then
-    yabai -m window "$WINDOW_ID" --minimize
+if [[ "${IS_HIDDEN}" == "false" ]]; then
+    skhd -k  "cmd - h"
 else
     yabai -m window "$WINDOW_ID" --space "$CURRENT_SPACE"
     yabai -m window --focus "$WINDOW_ID"
@@ -29,4 +30,3 @@ else
 
     yabai -m window "$WINDOW_ID" --space "$CURRENT_SPACE" --move abs:0:0 --grid "10:1:0:0:1:5"
 fi
-

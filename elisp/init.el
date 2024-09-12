@@ -37,6 +37,25 @@
 
 (require 'quelpa-use-package)
 
+;; Performance
+(use-package gcmh
+  :ensure t
+  :config
+  (gcmh-mode 1))
+
+
+(use-package ultra-scroll-mac
+  :quelpa (ultra-scroll-mac :fetcher github
+		   :repo "jdtsmith/ultra-scroll-mac"
+		   :branch "main")
+  
+  :if (eq window-system 'mac)
+  :init
+  (setq scroll-conservatively 101 ; important!
+        scroll-margin 0) 
+  :config
+  (ultra-scroll-mac-mode 1))
+
 
 ;; UI
 (load "~/elisp/ui")
@@ -205,3 +224,5 @@
   (delq 'company-preview-if-just-one-frontend company-frontends))
   (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
   (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion))
+
+
