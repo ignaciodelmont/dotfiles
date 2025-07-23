@@ -1,95 +1,224 @@
-# Change window focus within space
-cmd - down : yabai -m window --focus south
-cmd - up : yabai -m window --focus north
-cmd - left : yabai -m window --focus west
-cmd - right : yabai -m window --focus east
+# YABAI
 
-# Maximize window
-hyper - m : yabai -m window --toggle zoom-fullscreen
-fn - m : yabai -m window --toggle zoom-fullscreen
+# # Change window focus within space
+# cmd - down : yabai -m window --focus south
+# cmd - up : yabai -m window --focus north
+# cmd - left : yabai -m window --focus west
+# cmd - right : yabai -m window --focus east
 
-# Displays
-cmd + shift - up : yabai -m display --focus next
-cmd + shift - down : yabai -m display --focus prev
+# # Maximize window
+# hyper - m : yabai -m window --toggle zoom-fullscreen
+# fn - m : yabai -m window --toggle zoom-fullscreen
 
-
-
-#
-# Spaces
-#
+# # Displays
+# cmd + shift - up : yabai -m display --focus next
+# cmd + shift - down : yabai -m display --focus prev
 
 
 
-# Space Focus
-
-## For moonlander
-hyper - 1 : ~/.config/skhd/yabai_nth_space.sh 2 0
-hyper - 2 : ~/.config/skhd/yabai_nth_space.sh 2 1
-hyper - 3 : ~/.config/skhd/yabai_nth_space.sh 2 2
-hyper - 4 : ~/.config/skhd/yabai_nth_space.sh 2 3
-hyper - 5 : ~/.config/skhd/yabai_nth_space.sh 2 4
-hyper - 6 : ~/.config/skhd/yabai_nth_space.sh 2 5
-
-hyper - q : ~/.config/skhd/yabai_nth_space.sh 1 0
-hyper - w : ~/.config/skhd/yabai_nth_space.sh 1 1
-hyper - e : ~/.config/skhd/yabai_nth_space.sh 1 2
-hyper - r : ~/.config/skhd/yabai_nth_space.sh 1 3
-hyper - t : ~/.config/skhd/yabai_nth_space.sh 1 4
+# #
+# # Spaces
+# #
 
 
-## For builting keyboard
-fn - 1 : ~/.config/skhd/yabai_nth_space.sh 2 0
-fn - 2 : ~/.config/skhd/yabai_nth_space.sh 2 1
-fn - 3 : ~/.config/skhd/yabai_nth_space.sh 2 2
-fn - 4 : ~/.config/skhd/yabai_nth_space.sh 2 3
-fn - 5 : ~/.config/skhd/yabai_nth_space.sh 2 4
-fn - 6 : ~/.config/skhd/yabai_nth_space.sh 2 5
 
-fn - q : ~/.config/skhd/yabai_nth_space.sh 1 0
-fn - w : ~/.config/skhd/yabai_nth_space.sh 1 1
-fn - e : ~/.config/skhd/yabai_nth_space.sh 1 2
-fn - r : ~/.config/skhd/yabai_nth_space.sh 1 3
-fn - t : ~/.config/skhd/yabai_nth_space.sh 1 4
+# # Space Focus
 
-# Space Rotation
+# ## For moonlander
+# hyper - 1 : ~/.config/skhd/yabai_nth_space.sh 2 0
+# hyper - 2 : ~/.config/skhd/yabai_nth_space.sh 2 1
+# hyper - 3 : ~/.config/skhd/yabai_nth_space.sh 2 2
+# hyper - 4 : ~/.config/skhd/yabai_nth_space.sh 2 3
+# hyper - 5 : ~/.config/skhd/yabai_nth_space.sh 2 4
+# hyper - 6 : ~/.config/skhd/yabai_nth_space.sh 2 5
 
-hyper - r : yabai -m space --rotate 270
-fn - r : yabai -m space --rotate 270
+# hyper - q : ~/.config/skhd/yabai_nth_space.sh 1 0
+# hyper - w : ~/.config/skhd/yabai_nth_space.sh 1 1
+# hyper - e : ~/.config/skhd/yabai_nth_space.sh 1 2
+# hyper - r : ~/.config/skhd/yabai_nth_space.sh 1 3
+# hyper - t : ~/.config/skhd/yabai_nth_space.sh 1 4
 
 
-# Space flip
-hyper - y : yabai -m space --mirror y-axis
-fn - y : yabai -m space --mirror y-axis
+# ## For builting keyboard
+# fn - 1 : ~/.config/skhd/yabai_nth_space.sh 2 0
+# fn - 2 : ~/.config/skhd/yabai_nth_space.sh 2 1
+# fn - 3 : ~/.config/skhd/yabai_nth_space.sh 2 2
+# fn - 4 : ~/.config/skhd/yabai_nth_space.sh 2 3
+# fn - 5 : ~/.config/skhd/yabai_nth_space.sh 2 4
+# fn - 6 : ~/.config/skhd/yabai_nth_space.sh 2 5
+
+# fn - q : ~/.config/skhd/yabai_nth_space.sh 1 0
+# fn - w : ~/.config/skhd/yabai_nth_space.sh 1 1
+# fn - e : ~/.config/skhd/yabai_nth_space.sh 1 2
+# fn - r : ~/.config/skhd/yabai_nth_space.sh 1 3
+# fn - t : ~/.config/skhd/yabai_nth_space.sh 1 4
+
+# # Space Rotation
+
+# hyper - r : yabai -m space --rotate 270
+# fn - r : yabai -m space --rotate 270
 
 
-# Resize
-hyper - s : yabai -m window --resize left:-20:0 ; yabai -m window --resize right:-20:0
-hyper - d : yabai -m window --resize bottom:0:20 ; yabai -m window --resize top:0:20
-hyper - e : yabai -m window --resize top:0:-20 ; yabai -m window --resize bottom:0:-20
-hyper - f : yabai -m window --resize right:20:0 ; yabai -m window --resize left:20:0
-fn - s : yabai -m window --resize left:-20:0 ; yabai -m window --resize right:-20:0
-fn - d : yabai -m window --resize bottom:0:20 ; yabai -m window --resize top:0:20
-fn - e : yabai -m window --resize top:0:-20 ; yabai -m window --resize bottom:0:-20
-fn - f : yabai -m window --resize right:20:0 ; yabai -m window --resize left:20:0
+# # Space flip
+# hyper - y : yabai -m space --mirror y-axis
+# fn - y : yabai -m space --mirror y-axis
 
 
-# Balance
-hyper - b: yabai -m space --balance
-fn - b: yabai -m space --balance
+# # Resize
+# hyper - s : yabai -m window --resize left:-20:0 ; yabai -m window --resize right:-20:0
+# hyper - d : yabai -m window --resize bottom:0:20 ; yabai -m window --resize top:0:20
+# hyper - e : yabai -m window --resize top:0:-20 ; yabai -m window --resize bottom:0:-20
+# hyper - f : yabai -m window --resize right:20:0 ; yabai -m window --resize left:20:0
+# fn - s : yabai -m window --resize left:-20:0 ; yabai -m window --resize right:-20:0
+# fn - d : yabai -m window --resize bottom:0:20 ; yabai -m window --resize top:0:20
+# fn - e : yabai -m window --resize top:0:-20 ; yabai -m window --resize bottom:0:-20
+# fn - f : yabai -m window --resize right:20:0 ; yabai -m window --resize left:20:0
 
-#
-# Controlling yabai
-#
 
-# stop/start/restart yabai
-ctrl + cmd - q : yabai --stop-service
-ctrl + cmd - s : yabai --start-service
-ctrl + cmd - r : yabai --restart-service
+# # Balance
+# hyper - b: yabai -m space --balance
+# fn - b: yabai -m space --balance
 
+# #
+# # Controlling yabai
+# #
+
+# # stop/start/restart yabai
+# ctrl + cmd - q : yabai --stop-service
+# ctrl + cmd - s : yabai --start-service
+# ctrl + cmd - r : yabai --restart-service
+
+# Apps
+# cmd - return : bash ~/.config/skhd/yabai_toggle_kitty.sh
 
 # Toggle sketchybar
 ctrl + shift - j : bash ~/scripts/sketchybar_toggle.sh
 
-# Apps
-cmd - return : bash ~/.config/skhd/yabai_toggle_kitty.sh
+#############################################################################################
 
+#
+# Aerospace
+#
+
+# Move node mode declaration and keybindings
+:: move_node @
+fn - m ; move_node
+hyper - m ; move_node
+
+move_node < escape ; default
+
+move_node < 1 : aerospace move-node-to-workspace 1 ; skhd -k "escape"
+move_node < 2 : aerospace move-node-to-workspace 2 ; skhd -k "escape"
+move_node < 3 : aerospace move-node-to-workspace 3 ; skhd -k "escape"
+move_node < 4 : aerospace move-node-to-workspace 4 ; skhd -k "escape"
+move_node < 5 : aerospace move-node-to-workspace 5 ; skhd -k "escape"
+move_node < 6 : aerospace move-node-to-workspace 6 ; skhd -k "escape"
+move_node < 7 : aerospace move-node-to-workspace 7 ; skhd -k "escape"
+move_node < 8 : aerospace move-node-to-workspace 8 ; skhd -k "escape"
+move_node < 9 : aerospace move-node-to-workspace 9 ; skhd -k "escape"
+move_node < 0 : aerospace move-node-to-workspace 10 ; skhd -k "escape"
+move_node < q : aerospace move-node-to-workspace q ; skhd -k "escape"
+move_node < w : aerospace move-node-to-workspace w ; skhd -k "escape"
+move_node < e : aerospace move-node-to-workspace e ; skhd -k "escape"
+move_node < r : aerospace move-node-to-workspace r ; skhd -k "escape"
+move_node < t : aerospace move-node-to-workspace t ; skhd -k "escape"
+move_node < y : aerospace move-node-to-workspace y ; skhd -k "escape"
+move_node < u : aerospace move-node-to-workspace u ; skhd -k "escape"
+move_node < i : aerospace move-node-to-workspace i ; skhd -k "escape"
+move_node < o : aerospace move-node-to-workspace o ; skhd -k "escape"
+move_node < p : aerospace move-node-to-workspace p ; skhd -k "escape"
+
+# Resize mode
+:: resize_node @
+fn - n ; resize_node
+hyper - n ; resize_node
+
+resize_node < escape ; default
+
+resize_node < up : aerospace resize smart +50
+resize_node < down : aerospace resize smart -50
+
+# default keybindings
+
+default,resize_node < cmd - left : aerospace focus --boundaries-action wrap-around-the-workspace left
+default,resize_node < cmd - down : aerospace focus --boundaries-action wrap-around-the-workspace down
+default,resize_node < cmd - up : aerospace focus --boundaries-action wrap-around-the-workspace up
+default,resize_node < cmd - right : aerospace focus --boundaries-action wrap-around-the-workspace right
+
+fn - f : aerospace fullscreen
+hyper - f : aerospace fullscreen
+
+fn - b : aerospace balance-sizes
+hyper - b : aerospace balance-sizes
+
+# Tiling / Accordion
+
+# alt - comma
+alt - 0x2B : aerospace layout v_accordion
+# alt - slash
+alt - 0x2C : aerospace layout tiles horizontal vertical
+
+fn - space : aerospace layout floating tiling
+hyper - space : aerospace layout floating tiling
+
+# Workspace
+# Left hand spaces
+fn - 1 : aerospace workspace 1
+hyper - 1 : aerospace workspace 1
+fn - 2 : aerospace workspace 2
+hyper - 2 : aerospace workspace 2
+fn - 3 : aerospace workspace 3
+hyper - 3 : aerospace workspace 3
+fn - 4 : aerospace workspace 4
+hyper - 4 : aerospace workspace 4
+fn - 5 : aerospace workspace 5
+hyper - 5 : aerospace workspace 5
+fn - q : aerospace workspace q
+hyper - q : aerospace workspace q
+fn - w : aerospace workspace w
+hyper - w : aerospace workspace w
+fn - e : aerospace workspace e
+hyper - e : aerospace workspace e
+fn - r : aerospace workspace r
+hyper - r : aerospace workspace r
+fn - t : aerospace workspace t
+hyper - t : aerospace workspace t
+# Right hand spaces
+fn - 6 : aerospace workspace 6
+hyper - 6 : aerospace workspace 6
+fn - 7 : aerospace workspace 7
+hyper - 7 : aerospace workspace 7
+fn - 8 : aerospace workspace 8
+hyper - 8 : aerospace workspace 8
+fn - 9 : aerospace workspace 9
+hyper - 9 : aerospace workspace 9
+fn - 0 : aerospace workspace 0
+hyper - 0 : aerospace workspace 0
+fn - y : aerospace workspace y
+hyper - y : aerospace workspace y
+fn - u : aerospace workspace u
+hyper - u : aerospace workspace u
+fn - i : aerospace workspace i
+hyper - i : aerospace workspace i
+fn - o : aerospace workspace o
+hyper - o : aerospace workspace o
+fn - p : aerospace workspace p
+hyper - p : aerospace workspace p
+
+# Summon Workspace
+# fn - tab : aerospace summon-workspace 1
+# hyper - tab : aerospace summon-workspace 1
+
+# Focus Monitor
+cmd + shift - up : aerospace focus-monitor --wrap-around up
+cmd + shift - down : aerospace focus-monitor --wrap-around down
+cmd + shift - left : aerospace focus-monitor --wrap-around left
+cmd + shift - right : aerospace focus-monitor --wrap-around right
+
+# Move node to monitor
+alt + shift - up : aerospace move-node-to-monitor --wrap-around --focus-follows-window up
+alt + shift - down : aerospace move-node-to-monitor --wrap-around --focus-follows-window down
+
+# Move workspace to monitor
+alt + shift - right : aerospace move-workspace-to-monitor --wrap-around next
+alt + shift - left  : aerospace move-workspace-to-monitor --wrap-around prev

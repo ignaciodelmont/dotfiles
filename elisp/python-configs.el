@@ -34,13 +34,3 @@
 	      ("s-b" . python-black-buffer)
 	      ("s-r" . python-black-region)))
 
-;; TODO: Move this to the project itself
-;; (dap-register-debug-template "Kognitos brain"
-;;   (list :type "python"
-;;         :args ("-k" "test_ocr_text_is_in")
-;; 	:cwd (expand-file-name "~/Projects/Kognitos/brain/")
-;; 	:env '(("KOGNITOS_ENVIRONMENT" . "shared")("AWS_PROFILE" . "kognitos")("AWS_DEFAULT_REGION" . "us-west-2"))
-;; 	:debugger "debugpy"
-;;         :request "launch"
-;; 	:module "pytest"
-;;         :name "Test"))

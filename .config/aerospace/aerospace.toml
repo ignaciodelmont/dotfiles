@@ -1,0 +1,118 @@
+# Reference: https://github.com/i3/i3/blob/next/etc/config
+
+start-at-login = true
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = false
+
+after-startup-command = [
+    # JankyBorders has a built-in detection of already running process,
+    # so it won't be run twice on AeroSpace restart
+    'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
+]
+
+# Mouse follows focus when focused monitor changes
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+[mode.main.binding]
+# See: https://nikitabobko.github.io/AeroSpace/goodies#open-a-new-window-with-applescript
+cmd-enter = '''exec-and-forget osascript -e 'do shell script "open -a Ghostty &"' '''
+
+# i3 wraps focus by default # -> moved to skhd
+# cmd-left =         'focus --boundaries-action wrap-around-the-workspace left'
+# cmd-down =         'focus --boundaries-action wrap-around-the-workspace down'
+# cmd-up =         'focus --boundaries-action wrap-around-the-workspace up'
+# cmd-right = 'focus --boundaries-action wrap-around-the-workspace right'
+
+# alt-shift-j = 'move left'
+# alt-shift-k = 'move down'
+# alt-shift-l = 'move up'
+# alt-shift-semicolon = 'move right'
+
+
+# alt-f = 'fullscreen' # -> moved to skhd
+
+# alt-s = 'layout v_accordion' # 'layout stacking' in i3 -> moved to skhd
+# alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3 -> moved to skhd
+# alt-b = 'balance-sizes' # -> moved to skhd
+
+# alt-shift-space = 'layout floating tiling' # 'floating toggle' in i3
+
+# Not supported, because this command is redundant in AeroSpace mental model.
+# See: https://nikitabobko.github.io/AeroSpace/guide#floating-windows
+#alt-space = 'focus toggle_tiling_floating'
+
+# `focus parent`/`focus child` are not yet supported, and it's not clear whether they
+# should be supported at all https://github.com/nikitabobko/AeroSpace/issues/5
+# alt-a = 'focus parent'
+
+# alt-1 = 'workspace 1'
+# alt-2 = 'workspace 2'
+# alt-3 = 'workspace 3'
+# alt-4 = 'workspace 4'
+# alt-5 = 'workspace 5'
+# alt-6 = 'workspace 6'
+# alt-7 = 'workspace 7'
+# alt-8 = 'workspace 8'
+# alt-9 = 'workspace 9'
+# alt-0 = 'workspace 10'
+
+alt-shift-c = 'reload-config'
+
+alt-r = 'mode resize'
+
+[mode.resize.binding]
+left = 'resize width -50'
+up = 'resize height +50'
+down = 'resize height -50'
+right = 'resize width +50'
+enter = 'mode main'
+esc = 'mode main'
+
+
+# Callbacks
+[[on-window-detected]]
+if.app-id = 'org.gnu.Emacs'
+run = ['move-node-to-workspace 1']
+
+[[on-window-detected]]
+if.app-id = 'com.linear'
+run = ['move-node-to-workspace 1']
+
+[[on-window-detected]]
+if.app-id = 'com.todesktop.230313mzl4w4u92' # Cursor
+run = ['move-node-to-workspace 2']
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = ['move-node-to-workspace 3']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+run = ['move-node-to-workspace 3']
+
+[[on-window-detected]]
+if.app-id = 'dev.warp.Warp-Stable'
+run = ['move-node-to-workspace 4']
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = ['move-node-to-workspace q']
+
+[[on-window-detected]]
+if.app-id = 'us.zoom.xos'
+run = ['move-node-to-workspace w']
+
+[[on-window-detected]]
+if.app-id="com.mitchellh.ghostty"
+run= [
+  "layout floating",
+]
+
+
+[workspace-to-monitor-force-assignment]
+1 = "^SAMSUNG.*"
+2 = "^SAMSUNG.*"
+3 = "^SAMSUNG.*"
+4 = "^SAMSUNG.*"
+5 = "^SAMSUNG.*"
+temp = "^SAMSUNG.*"
