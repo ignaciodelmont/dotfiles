@@ -15,5 +15,9 @@
 
 
 ;; which-key configs
-(which-key-mode)
-(setq which-key-idle-delay 0.1)
+(use-package which-key
+  :config
+  (setq which-key-idle-delay 0.1)
+  (which-key-mode))
+
+
