@@ -18,7 +18,7 @@
 (straight-use-package 'use-package)
 
 ;; Make straight.el the default for use-package
-(setq straight-use-package-by-default t)
+n(setq straight-use-package-by-default t)
 
 ;; Performance
 (use-package gcmh
@@ -38,15 +38,6 @@
 ;; Keybindings
 (load "~/elisp/keybindings")
 
-;; Buffer
-(load "~/elisp/buffer")
-
-;; IDE configs and packages
-(load "~/elisp/ide")
-
 ;; Custom file
 (setq custom-file "~/elisp/emacs-custom.el")
 (load custom-file)
-
-
-(load "~/elisp/rust-configs")
