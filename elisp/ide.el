@@ -38,4 +38,6 @@
             (setq path (file-name-directory (directory-file-name path)))
           (throw 'found (cons 'transient path)))))))
 
-(add-to-list 'project-find-functions #'project-find-root)
+(use-package project
+  :config
+  (add-to-list 'project-find-functions #'project-find-root))
