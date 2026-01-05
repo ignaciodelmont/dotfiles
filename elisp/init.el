@@ -50,3 +50,4 @@
 
 
 (load "~/elisp/rust-configs")
+(load "~/elisp/python-configs.el")

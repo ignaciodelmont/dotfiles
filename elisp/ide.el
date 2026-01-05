@@ -13,6 +13,25 @@
   :config
   (claude-code-ide-emacs-tools-setup)) ; Optionally enable Emacs MCP tools
 
+;; LSP Mode
+(use-package lsp-mode
+  :commands (lsp lsp-deferred)
+  :hook (lsp-mode . lsp-enable-which-key-integration)
+  :init
+  (setq lsp-keymap-prefix "C-c l"))
+
+;; LSP UI
+(use-package lsp-ui
+  :commands lsp-ui-mode
+  :hook (lsp-mode . lsp-ui-mode)
+  :custom
+  (lsp-ui-sideline-show-diagnostics t)
+  (lsp-ui-sideline-show-hover nil)
+  (lsp-ui-sideline-show-code-actions nil))
+
+;; Show flycheck errors below the line
+(use-package flycheck-inline
+  :hook (flycheck-mode . flycheck-inline-mode))
 
 ;; Project customizations
 (defcustom project-root-markers
