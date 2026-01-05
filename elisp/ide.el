@@ -36,7 +36,7 @@
 ;; Project customizations
 (defcustom project-root-markers
   '("Cargo.toml" "compile_commands.json" "compile_flags.txt"
-    "project.clj" ".git" "deps.edn" "shadow-cljs.edn" "pyproject.toml" ".project")
+    "project.clj" "deps.edn" "shadow-cljs.edn" "pyproject.toml" ".project")
   "Files or directories that indicate the root of a project."
   :type '(repeat string)
   :group 'project)
