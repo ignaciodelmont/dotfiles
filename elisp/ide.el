@@ -60,3 +60,6 @@
 (use-package project
   :config
   (add-to-list 'project-find-functions #'project-find-root))
+
+;; Git interface
+(use-package magit)

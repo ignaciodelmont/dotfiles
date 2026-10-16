@@ -14,7 +14,8 @@
 (tooltip-mode -1)     ; Disable tooltips
 (set-fringe-mode 2)   ; Some breathing room
 (global-display-line-numbers-mode t) ; Line numbers
-(add-to-list 'default-frame-alist '(undecorated . t)) ; No title bar
+(add-to-list 'default-frame-alist '(undecorated . nil))
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t)) ; Minimal title bar
 ;; (add-to-list 'default-frame-alist '(fullscreen . maximized)) ; Start in maximized view
 (global-hl-line-mode 1)
 

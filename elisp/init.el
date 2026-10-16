@@ -49,5 +49,11 @@
 (load custom-file)
 
 
+;; Languages
 (load "~/elisp/rust-configs")
-(load "~/elisp/python-configs.el")
+(load "~/elisp/python-configs")
+(load "~/elisp/misc-langs")
+
+
+;; Sessions
+(load "~/elisp/easysession-config")
