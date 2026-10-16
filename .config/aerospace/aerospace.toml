@@ -74,9 +74,9 @@ esc = 'mode main'
 if.app-id = 'org.gnu.Emacs'
 run = ['move-node-to-workspace 1']
 
-[[on-window-detected]]
-if.app-id = 'com.linear'
-run = ['move-node-to-workspace 1']
+# [[on-window-detected]]
+# if.app-id = 'com.linear'
+# run = ['move-node-to-workspace 1']
 
 [[on-window-detected]]
 if.app-id = 'com.todesktop.230313mzl4w4u92' # Cursor
@@ -105,7 +105,7 @@ run = ['move-node-to-workspace e']
 [[on-window-detected]]
 if.app-id="com.mitchellh.ghostty"
 run= [
-  "layout floating",
+  "layout tiling",
 ]
 
 
@@ -115,7 +115,16 @@ run= [
 3 = "^SAMSUNG.*"
 4 = "^SAMSUNG.*"
 5 = "^SAMSUNG.*"
-temp = "^SAMSUNG.*"
+6 = "^SAMSUNG.*"
+7 = "^SAMSUNG.*"
+8 = "^SAMSUNG.*"
+9 = "^SAMSUNG.*"
+y = ["secondary", "main"]
+u = ["secondary", "main"]
+i = ["secondary", "main"]
+o = ["secondary", "main"]
+p = ["secondary", "main"]
+
 
 [gaps]
 inner.horizontal = 10

@@ -151,6 +151,42 @@ hyper - f : aerospace fullscreen
 fn - b : aerospace balance-sizes
 hyper - b : aerospace balance-sizes
 
+# #
+# # Window arrangement (focused workspace, tiled windows only)
+# #
+# hyper/fn - g      grid: near-square grid, ceil(sqrt(n)) columns, extras on the right
+# hyper - arrows    swap focused window with its neighbour (focus follows the window)
+# fn - h/j/k/l      same as hyper - arrows (left/down/up/right); fn - arrows are left
+#                   alone because macOS uses them for Home/End/PageUp/PageDown
+# hyper/fn - s      rotate all windows one slot forward (last wraps to first)
+# hyper/fn - a      rotate all windows one slot backward (undoes s)
+# hyper/fn - x      flatten into a single row (reset; follow with g)
+# Scripts: ~/.config/skhd/aerospace_grid.sh, ~/.config/skhd/aerospace_rotate.sh
+
+# Grid
+fn - g : ~/.config/skhd/aerospace_grid.sh
+hyper - g : ~/.config/skhd/aerospace_grid.sh
+
+# Swap with neighbour
+hyper - left : aerospace swap --swap-focus left
+hyper - down : aerospace swap --swap-focus down
+hyper - up : aerospace swap --swap-focus up
+hyper - right : aerospace swap --swap-focus right
+fn - h : aerospace swap --swap-focus left
+fn - j : aerospace swap --swap-focus down
+fn - k : aerospace swap --swap-focus up
+fn - l : aerospace swap --swap-focus right
+
+# Rotate
+fn - s : ~/.config/skhd/aerospace_rotate.sh forward
+hyper - s : ~/.config/skhd/aerospace_rotate.sh forward
+fn - a : ~/.config/skhd/aerospace_rotate.sh backward
+hyper - a : ~/.config/skhd/aerospace_rotate.sh backward
+
+# Reset to a flat row
+fn - x : aerospace flatten-workspace-tree
+hyper - x : aerospace flatten-workspace-tree
+
 # Tiling / Accordion
 
 # alt - comma
