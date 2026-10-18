@@ -6,7 +6,10 @@
 set -u
 
 focused=$(aerospace list-windows --focused --format '%{window-id}' 2>/dev/null) || exit 0
-n=$(aerospace list-windows --workspace focused --format '%{window-layout}' | grep -c '_tiles\|_accordion')
+# NB: there is no %{window-layout} variable in aerospace 0.18.2, so count every
+# window in the workspace; floating ones are not in the tiling tree and simply
+# fall out of the --dfs-index walk below.
+n=$(aerospace list-windows --workspace focused --format '%{window-id}' | wc -l | tr -d ' ')
 [ "$n" -lt 2 ] && exit 0
 
 # Start from a single horizontal row
